@@ -1,0 +1,110 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: white;
+  min-height: 100svh;
+  padding-inline: 60px;
+  overflow: hidden;
+}
+:root {
+  ---primary-color: #2563eb;
+}
+main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 100vh;
+  height: 100vh;
+}
+main .content {
+  flex: 1;
+  flex-shrink: 1;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+  gap: 3rem;
+  h1 {
+    font-size: 5rem;
+    font-weight: 600;
+  }
+  button {
+    padding: 1rem 3rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+    border: none;
+    -o-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    border-radius: 10px;
+    background-color: var(---primary-color);
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    &:hover {
+      background-color: #1d4ed8;
+    }
+  }
+}
+main .image {
+  flex: 1;
+  flex-shrink: 0;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .circle {
+    width: 90%;
+    aspect-ratio: 1/1; /* Set the aspect ratio to 1:1 */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(180deg, var(---primary-color) 0%, #ffffff 100%);
+    position: relative;
+    img{
+        width: 100%;
+        height: auto;
+        position: absolute;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    padding-inline: 0;
+  }
+  main {
+    flex-direction: column;
+    justify-content: baseline;
+  }
+
+  main .content {
+    width: 100%;
+    flex: 1;
+    flex-shrink: 0;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    h1 {
+      font-size: 3rem;
+    }
+    order: 2;
+  }
+  main .image {
+    width: 100%;
+    flex: 1;
+    flex-shrink: 0;
+    padding-top: 1rem;
+    order: 1;
+    .circle {
+      width: 100%;
+    }
+  }
+}
